@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vedic Speech Therapy and Hearing Care Clinic</title>
+    <meta name="description"
+        content="Contact Vedic Speech Therapy and Hearing Care Clinic for appointments and inquiries.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Logo.jpeg" alt="Vedic Speech Therapy and Hearing Care Clinic Logo" id="clinic-logo">
+                <div class="logo-text">
+                    <span class="logo-title-1">Vedic Speech Therapy</span>
+                    <span class="logo-title-2">& Hearing Care Clinic</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html" class="btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div style="height: 100px; background-color: var(--background-color);"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" style="padding-top: 50px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for appointments and inquiries.</p>
+            </div>
+            <div class="contact-grid-top">
+                <div class="contact-info" style="background: var(--white); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">Clinic Details</h3>
+                    <div class="contact-item" style="margin-bottom: 20px;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>S.O, 7/10/7, 2ND FLOOR NPC TOWERS<br>
+                               DLF CIRCLE MAIN ROAD AKSHAYANAGAR,<br>
+                               Yelenahalli, Bommanahalli,<br>
+                               Bengaluru, Karnataka 560114</p>
+                        </div>
+                    </div>
+                    <div class="contact-item" style="margin-bottom: 20px;">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+919916049099">+91 9916049099</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item" style="margin-bottom: 20px;">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:vedicspeechandhearingclinic@gmail.com">vedicspeechandhearingclinic@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Sunday<br>10:00 AM to 9:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointment-form" style="background: var(--white); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">Book an Appointment</h3>
+                    <form id="whatsapp-form">
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <input type="text" id="patientName" placeholder="Your Full Name" required minlength="3" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 15px; display: flex; gap: 10px;">
+                            <select id="countryCode" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main); max-width: 130px; background-color: white;">
+                                <option value="+91" selected>IN (+91)</option>
+                                <option value="+1">US/CA (+1)</option>
+                                <option value="+44">UK (+44)</option>
+                                <option value="+61">AU (+61)</option>
+                                <option value="+971">UAE (+971)</option>
+                                <option value="+65">SG (+65)</option>
+                            </select>
+                            <input type="tel" id="patientPhone" placeholder="10-digit Phone Number" required minlength="10" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <select id="appointmentTime" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
+                                <option value="" disabled selected>Select Appointment Time</option>
+                                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                                <option value="12:00 PM - 01:00 PM">12:00 PM - 01:00 PM</option>
+                                <option value="01:00 PM - 02:00 PM">01:00 PM - 02:00 PM</option>
+                                <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+                                <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+                                <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
+                                <option value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</option>
+                                <option value="06:00 PM - 07:00 PM">06:00 PM - 07:00 PM</option>
+                                <option value="07:00 PM - 08:00 PM">07:00 PM - 08:00 PM</option>
+                                <option value="08:00 PM - 09:00 PM">08:00 PM - 09:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <textarea id="patientMessage" placeholder="Brief Message / Reason for visit" required minlength="10" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main); resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                            <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Book via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container" style="margin-top: 40px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); height: 400px; width: 100%;">
+                <iframe src="https://maps.google.com/maps?q=NPC+TOWERS+DLF+CIRCLE+MAIN+ROAD+AKSHAYANAGAR+Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>Vedic Speech Therapy and Hearing Care Clinic</h3>
+                <p>Dedicated to helping you hear better and speak clearer.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:vedicspeechandhearingclinic@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vedic Speech Therapy and Hearing Care Clinic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
