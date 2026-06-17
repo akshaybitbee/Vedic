@@ -620,6 +620,151 @@ h1, h2, h3, h4 {
     font-size: 0.9rem;
 }
 
+/* Services Page Styles */
+.page-hero {
+    padding: 150px 0 80px;
+    background: linear-gradient(135deg, var(--primary-light), var(--white));
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-page-content {
+    padding: 80px 0;
+    background: var(--background-color);
+}
+
+.services-category-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.service-category {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.category-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.category-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.category-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Accordion Styles */
+.accordion-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--background-color);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.accordion-header:hover, .accordion-header.active {
+    background: var(--primary-light);
+}
+
+.accordion-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.accordion-header.active .accordion-title {
+    color: var(--primary-color);
+}
+
+.accordion-icon {
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: var(--white);
+}
+
+.service-benefits {
+    padding: 20px;
+}
+
+.service-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.service-benefits li:last-child {
+    margin-bottom: 0;
+}
+
+.service-benefits li i {
+    color: var(--primary-color);
+    margin-top: 4px;
+    font-size: 0.9rem;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .hero-container {
@@ -627,7 +772,7 @@ h1, h2, h3, h4 {
         text-align: center;
     }
     
-    .about-container {
+    .about-container, .services-category-container {
         grid-template-columns: 1fr;
     }
     
