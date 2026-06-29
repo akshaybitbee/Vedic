@@ -815,6 +815,7 @@ h1, h2, h3, h4 {
 
 .marquee-content {
     display: flex;
+    align-items: flex-start;
     gap: 30px;
     width: max-content;
     animation: scroll-marquee 40s linear infinite;
