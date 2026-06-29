@@ -42,7 +42,7 @@
     </header>
 
     <!-- Spacer for fixed header -->
-    <div style="height: 100px; background-color: var(--primary-light);"></div>
+    <div class="spacer-header-alt"></div>
 
     <!-- Team Section -->
     <section id="team" class="team" style="padding-top: 50px;">
@@ -86,60 +86,115 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews" style="background: var(--white); padding: 80px 0;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Patient Success Stories</h2>
-                <p>Don't just take our word for it—see how we've helped families find their voice and reconnect with the world.</p>
+    <section class="reviews section-reviews-bg">
+        <div class="container" style="text-align: center; margin-bottom: 40px;">
+            <div class="google-summary-badge" style="display: inline-flex; flex-direction: column; align-items: center; gap: 8px;">
+                <h2 style="font-size: 2rem; margin: 0; font-weight: 700; letter-spacing: 1px;">EXCELLENT</h2>
+                <div class="summary-stars" style="color: #FBBC04; font-size: 2.2rem; display: flex; gap: 5px;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="margin: 0; font-size: 1.2rem;">Based on <strong style="font-weight: 600;">106 reviews</strong></p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="height: 35px; margin-top: 5px;">
             </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-text">"Excellent clinic! Sweta and the team are incredibly patient and dedicated. We saw massive improvements in our child's speech within just a few months. Highly recommended!"</p>
-                    <div class="review-author-info" style="display: flex; align-items: center; gap: 15px;">
-                        <img src="https://ui-avatars.com/api/?name=Sarah+M&background=0288d1&color=fff" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
-                        <div>
-                            <p class="review-author" style="margin: 0;">Sarah M.</p>
-                            <p style="font-size: 0.8rem; color: var(--text-light); margin: 0;">Google Review</p>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <!-- Card 1 -->
+                <div class="google-review-card">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=C&background=random&color=fff" alt="Avatar" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Chinthan shetty</p>
+                            <p class="review-date">3 months ago</p>
                         </div>
+                        <img src="https://developers.google.com/static/identity/images/g-logo.png" alt="Posted on Google" title="Posted on Google" class="g-icon">
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="fas fa-check-circle verified-icon" style="color: #1A73E8; margin-left: 8px;"></i>
+                    </div>
+                    <div class="review-body">
+                        <p class="review-text-content">I’ve been visiting Dr. Vinay at Vedic Speech and Hearing Clinic for the past three months, and I’m extremely grateful for the progress I’ve made. His tailored approach has played a crucial role in improving my speech and managing my stammering. This improvement has greatly boosted my confidence and positively impacted both my professional and personal life. Dr. Vinay is knowledgeable, patient, and truly dedicated to his work. I wholeheartedly recommend Vedic Speech for anyone seeking support. Thank you.</p>
+                        <span class="read-more-btn">Read more</span>
                     </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-text">"Dr. Vinoth Raj's occupational therapy sessions have been life-changing. He really knows how to engage children and build their confidence. The sensory room is fantastic."</p>
-                    <div class="review-author-info" style="display: flex; align-items: center; gap: 15px;">
-                        <img src="https://ui-avatars.com/api/?name=Rajiv+K&background=0288d1&color=fff" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
-                        <div>
-                            <p class="review-author" style="margin: 0;">Rajiv K.</p>
-                            <p style="font-size: 0.8rem; color: var(--text-light); margin: 0;">Google Review</p>
+                <!-- Card 2 -->
+                <div class="google-review-card">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=B&background=random&color=fff" alt="Avatar" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Bhavani Bhavani</p>
+                            <p class="review-date">4 months ago</p>
                         </div>
+                        <img src="https://developers.google.com/static/identity/images/g-logo.png" alt="Posted on Google" title="Posted on Google" class="g-icon">
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="fas fa-check-circle verified-icon" style="color: #1A73E8; margin-left: 8px;"></i>
+                    </div>
+                    <div class="review-body">
+                        <p class="review-text-content">We are very happy with the progress our child has made at this speech therapy clinic. The therapists are extremely patient, caring, and truly understand children’s needs. They explain everything clearly and guide us on what to do at home as well. My child feels comfortable and enjoys coming for sessions, which itself shows how supportive the environment is. We have noticed improvement in speech, attention, and overall confidence. As parents, we feel reassured and grateful for the dedication and professionalism of the entire team. Highly recommended for any parent looking for quality speech therapy.</p>
+                        <span class="read-more-btn">Read more</span>
                     </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-text">"Got my father's hearing test done here. Dr. Vinay Kumar was very thorough and explained everything clearly. The hearing aid fitting was perfect. Thank you, Vedic Clinic!"</p>
-                    <div class="review-author-info" style="display: flex; align-items: center; gap: 15px;">
-                        <img src="https://ui-avatars.com/api/?name=Priya+D&background=0288d1&color=fff" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
-                        <div>
-                            <p class="review-author" style="margin: 0;">Priya D.</p>
-                            <p style="font-size: 0.8rem; color: var(--text-light); margin: 0;">Google Review</p>
+                <!-- Card 3 -->
+                <div class="google-review-card">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=S&background=random&color=fff" alt="Avatar" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Shreya Pandey</p>
+                            <p class="review-date">6 months ago</p>
                         </div>
+                        <img src="https://developers.google.com/static/identity/images/g-logo.png" alt="Posted on Google" title="Posted on Google" class="g-icon">
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="fas fa-check-circle verified-icon" style="color: #1A73E8; margin-left: 8px;"></i>
+                    </div>
+                    <div class="review-body">
+                        <p class="review-text-content">Dr Vinay- Thanks for being you and helping us. I cannot thank you enough for what you have done for us. Thank you so much. Please keep being yourself and change lives in the same way. We will be forever indebted to your kindness. Thanks. Trust him on a mother's recommendation.</p>
+                        <span class="read-more-btn">Read more</span>
                     </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-text">"Very professional and clean environment. You can tell they genuinely care about their patients. The front desk is also very helpful with scheduling."</p>
-                    <div class="review-author-info" style="display: flex; align-items: center; gap: 15px;">
-                        <img src="https://ui-avatars.com/api/?name=Ananya+S&background=0288d1&color=fff" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
-                        <div>
-                            <p class="review-author" style="margin: 0;">Ananya S.</p>
-                            <p style="font-size: 0.8rem; color: var(--text-light); margin: 0;">Google Review</p>
+                <!-- Card 4 -->
+                <div class="google-review-card">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=R&background=random&color=fff" alt="Avatar" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">Rohan</p>
+                            <p class="review-date">2 months ago</p>
                         </div>
+                        <img src="https://developers.google.com/static/identity/images/g-logo.png" alt="Posted on Google" title="Posted on Google" class="g-icon">
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="fas fa-check-circle verified-icon" style="color: #1A73E8; margin-left: 8px;"></i>
+                    </div>
+                    <div class="review-body">
+                        <p class="review-text-content">I had been struggling with tinnitus and a numb sensation in my ear, which made me quite anxious. That’s when I decided to visit Vedic Speech and Hearing Clinic in Bommanahalli, Akshayanagar. From the moment I walked in, I felt reassured by their professional and patient-friendly approach. Dr. Vinay was truly exceptional—he guided me through every step, from diagnosis to treatment, with patience and care. He explained my condition in simple terms, addressing all my concerns and making sure I was comfortable with the treatment plan. The clinic itself is well-equipped, and the staff was incredibly polite and supportive, which made the whole experience smooth and stress-free. Thanks to Dr. Vinay’s expertise and personal attention, I noticed a significant improvement in my symptoms. Overall, it was a very positive experience, and I’d highly recommend Vedic Speech and Hearing Clinic to anyone in need of expert care for their hearing or speech. Especially the best speech therapy for kids in Akshaynagar highly recommended. Results based speech therapy in Akshaynagar they keep 100% transparency to parents.</p>
+                        <span class="read-more-btn">Read more</span>
                     </div>
                 </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://www.google.com/maps/place/Vedic+Speech+Therapy+%26+Hearing+Care+Clinic" target="_blank" class="btn-secondary"><i class="fab fa-google"></i> Read More Reviews on Google</a>
+                <!-- Card 5 -->
+                <div class="google-review-card">
+                    <div class="review-header">
+                        <img src="https://ui-avatars.com/api/?name=D&background=random&color=fff" alt="Avatar" class="reviewer-avatar">
+                        <div class="reviewer-info">
+                            <p class="reviewer-name">divya repala</p>
+                            <p class="review-date">12 months ago</p>
+                        </div>
+                        <img src="https://developers.google.com/static/identity/images/g-logo.png" alt="Posted on Google" title="Posted on Google" class="g-icon">
+                    </div>
+                    <div class="review-stars-row">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <i class="fas fa-check-circle verified-icon" style="color: #1A73E8; margin-left: 8px;"></i>
+                    </div>
+                    <div class="review-body">
+                        <p class="review-text-content">This is a good place for speech sessions..<br>My child improved alot..now she can communicate and speaks very well. Thank you so much!</p>
+                        <span class="read-more-btn">Read more</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -168,7 +223,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Vedic Speech Therapy and Hearing Care Clinic. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2024</span> Vedic Speech Therapy and Hearing Care Clinic. All rights reserved.</p>
         </div>
     </footer>
 

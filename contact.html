@@ -42,7 +42,7 @@
     </header>
 
     <!-- Spacer for fixed header -->
-    <div style="height: 100px; background-color: var(--background-color);"></div>
+    <div class="spacer-header"></div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact" style="padding-top: 50px;">
@@ -52,7 +52,7 @@
                 <p>Get in touch with us for appointments and inquiries.</p>
             </div>
             <div class="contact-grid-top">
-                <div class="contact-info" style="background: var(--white); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <div class="contact-info contact-box-card">
                     <h3 style="margin-bottom: 20px; color: var(--primary-color);">Clinic Details</h3>
                     <div class="contact-item" style="margin-bottom: 20px;">
                         <i class="fas fa-map-marker-alt"></i>
@@ -87,24 +87,29 @@
                     </div>
                 </div>
 
-                <div class="appointment-form" style="background: var(--white); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <div class="appointment-form contact-box-card">
                     <h3 style="margin-bottom: 20px; color: var(--primary-color);">Book an Appointment</h3>
                     <form id="whatsapp-form">
                         <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="patientName" style="display: block; margin-bottom: 5px; font-weight: 600;">Full Name</label>
                             <input type="text" id="patientName" placeholder="Your Full Name" required minlength="3" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
                         </div>
-                        <div class="form-group" style="margin-bottom: 15px; display: flex; gap: 10px;">
-                            <select id="countryCode" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main); max-width: 130px; background-color: white;">
-                                <option value="+91" selected>IN (+91)</option>
-                                <option value="+1">US/CA (+1)</option>
-                                <option value="+44">UK (+44)</option>
-                                <option value="+61">AU (+61)</option>
-                                <option value="+971">UAE (+971)</option>
-                                <option value="+65">SG (+65)</option>
-                            </select>
-                            <input type="tel" id="patientPhone" placeholder="10-digit Phone Number" required minlength="10" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="patientPhone" style="display: block; margin-bottom: 5px; font-weight: 600;">Phone Number</label>
+                            <div style="display: flex; gap: 10px;">
+                                <select id="countryCode" aria-label="Country Code" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main); max-width: 130px; background-color: white;">
+                                    <option value="+91" selected>IN (+91)</option>
+                                    <option value="+1">US/CA (+1)</option>
+                                    <option value="+44">UK (+44)</option>
+                                    <option value="+61">AU (+61)</option>
+                                    <option value="+971">UAE (+971)</option>
+                                    <option value="+65">SG (+65)</option>
+                                </select>
+                                <input type="tel" id="patientPhone" placeholder="10-digit Phone Number" required minlength="10" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
+                            </div>
                         </div>
                         <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="appointmentTime" style="display: block; margin-bottom: 5px; font-weight: 600;">Preferred Time</label>
                             <select id="appointmentTime" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
                                 <option value="" disabled selected>Select Appointment Time</option>
                                 <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
@@ -121,6 +126,7 @@
                             </select>
                         </div>
                         <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="patientMessage" style="display: block; margin-bottom: 5px; font-weight: 600;">Message</label>
                             <textarea id="patientMessage" placeholder="Brief Message / Reason for visit" required minlength="10" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main); resize: vertical;"></textarea>
                         </div>
                         <button type="submit" class="btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
@@ -160,7 +166,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Vedic Speech Therapy and Hearing Care Clinic. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2024</span> Vedic Speech Therapy and Hearing Care Clinic. All rights reserved.</p>
         </div>
     </footer>
 

@@ -11,14 +11,19 @@ window.addEventListener('scroll', () => {
 });
 
 // Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href*="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        const href = this.getAttribute('href');
+        const targetId = href.substring(href.indexOf('#'));
         
-        const targetId = this.getAttribute('href');
+        // If it's just '#' avoid querying
+        if (targetId === '#') return;
+        
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
+            // Only prevent default if target exists on current page
+            e.preventDefault();
             window.scrollTo({
                 top: targetElement.offsetTop - 80, // Adjust for header height
                 behavior: 'smooth'
@@ -27,27 +32,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mobile menu toggle (basic implementation)
+// Mobile menu toggle
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navMenu = document.querySelector('.nav-menu');
 
 mobileBtn.addEventListener('click', () => {
-    if (navMenu.style.display === 'block') {
-        navMenu.style.display = 'none';
-    } else {
-        navMenu.style.display = 'block';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.background = '#fff';
-        navMenu.style.padding = '20px';
-        navMenu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        
-        const ul = navMenu.querySelector('ul');
-        ul.style.flexDirection = 'column';
-        ul.style.gap = '20px';
-    }
+    navMenu.classList.toggle('nav-active');
 });
 
 // WhatsApp Form Submission
@@ -75,6 +65,26 @@ if (waForm) {
         
         // Open WhatsApp in a new tab
         window.open(waUrl, '_blank');
+        
+        // Reset form and show feedback
+        waForm.reset();
+        
+        // Check if success message already exists to avoid duplicates
+        if (!document.getElementById('form-success-msg')) {
+            const successMsg = document.createElement('p');
+            successMsg.id = 'form-success-msg';
+            successMsg.textContent = 'Thank you! You will be redirected to WhatsApp to complete your booking.';
+            successMsg.style.color = '#25D366';
+            successMsg.style.fontWeight = '600';
+            successMsg.style.marginTop = '15px';
+            successMsg.style.textAlign = 'center';
+            waForm.appendChild(successMsg);
+            
+            // Remove message after a few seconds
+            setTimeout(() => {
+                successMsg.remove();
+            }, 6000);
+        }
     });
 }
 
@@ -139,4 +149,44 @@ if (statsSection) {
     }, { threshold: 0.5 });
 
     observer.observe(statsSection);
+}
+
+// Marquee Duplication for Infinite Scroll
+const marqueeContent = document.querySelector('.marquee-content');
+if (marqueeContent) {
+    const clone = marqueeContent.cloneNode(true);
+    // Move children from clone into the original marquee-content to avoid structural issues with flex gap
+    while(clone.firstElementChild) {
+        marqueeContent.appendChild(clone.firstElementChild);
+    }
+}
+
+// Read More Logic for Google Reviews
+const reviewTexts = document.querySelectorAll('.review-text-content');
+reviewTexts.forEach(text => {
+    // If text is short, hide 'Read more' button
+    const btn = text.nextElementSibling;
+    // We need to wait a tiny bit for rendering to check scrollHeight accurately
+    setTimeout(() => {
+        if (text.scrollHeight <= text.clientHeight + 2) { // Add tiny buffer for fractional pixels
+            if(btn) btn.style.display = 'none';
+        }
+    }, 100);
+
+    if(btn) {
+        btn.addEventListener('click', function() {
+            text.classList.toggle('expanded');
+            if (text.classList.contains('expanded')) {
+                this.textContent = 'Read less';
+            } else {
+                this.textContent = 'Read more';
+            }
+        });
+    }
+});
+
+// Update Copyright Year
+const yearElement = document.getElementById('current-year');
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
 }
