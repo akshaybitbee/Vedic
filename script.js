@@ -55,7 +55,7 @@ if (waForm) {
         
         // The WhatsApp number (we'll use the clinic number for now until a specific one is provided)
         // Format: country code without plus sign followed by the number
-        const whatsappNumber = "919019968426"; 
+        const whatsappNumber = "919916049099"; 
         
         // Format the message content
         const waMessage = `*New Appointment Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Time:* ${time}%0A*Message:* ${message}`;
