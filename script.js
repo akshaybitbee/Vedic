@@ -10,15 +10,13 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"], a[href^="index.html#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
-        const targetId = href.substring(href.indexOf('#'));
+        if (href === '#' || href === 'index.html#') return;
         
-        // If it's just '#' avoid querying
-        if (targetId === '#') return;
-        
+        const targetId = '#' + href.split('#')[1];
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
@@ -64,27 +62,17 @@ if (waForm) {
         const waUrl = `https://wa.me/${whatsappNumber}?text=${waMessage}`;
         
         // Open WhatsApp in a new tab
-        window.open(waUrl, '_blank');
+        window.open(`https://wa.me/${whatsappNumber}?text=${waMessage}`, '_blank');
         
-        // Reset form and show feedback
+        // Show success message and reset form
+        const successMsg = document.getElementById('formSuccessMessage');
+        if (successMsg) {
+            successMsg.style.display = 'block';
+            setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+        }
         waForm.reset();
         
-        // Check if success message already exists to avoid duplicates
-        if (!document.getElementById('form-success-msg')) {
-            const successMsg = document.createElement('p');
-            successMsg.id = 'form-success-msg';
-            successMsg.textContent = 'Thank you! You will be redirected to WhatsApp to complete your booking.';
-            successMsg.style.color = '#25D366';
-            successMsg.style.fontWeight = '600';
-            successMsg.style.marginTop = '15px';
-            successMsg.style.textAlign = 'center';
-            waForm.appendChild(successMsg);
-            
-            // Remove message after a few seconds
-            setTimeout(() => {
-                successMsg.remove();
-            }, 6000);
-        }
+        // Success message logic is handled above
     });
 }
 
