@@ -16,12 +16,11 @@ if (typeof CONFIG !== 'undefined' && CONFIG.MAINTENANCE_MODE) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
             <style>
                 :root {
-                    --primary-color: #2C7873;
-                    --primary-light: #4A9C96;
-                    --secondary-color: #52B2BF;
-                    --accent-color: #FF7F50;
+                    --primary-color: #0288d1;
+                    --primary-light: #e1f5fe;
+                    --secondary-color: #03a9f4;
                     --text-color: #333333;
-                    --background-color: #F8FBFB;
+                    --background-color: #f9fbfc;
                     --white: #FFFFFF;
                 }
                 * {
@@ -72,7 +71,7 @@ if (typeof CONFIG !== 'undefined' && CONFIG.MAINTENANCE_MODE) {
                     margin-bottom: 30px;
                 }
                 .contact-info {
-                    background: #f1f8f8;
+                    background: var(--primary-light);
                     padding: 25px;
                     border-radius: 8px;
                     margin-top: 20px;
