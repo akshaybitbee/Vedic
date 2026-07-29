@@ -35,7 +35,19 @@ const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navMenu = document.querySelector('.nav-menu');
 
 mobileBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('nav-active');
+    const isOpen = navMenu.classList.toggle('nav-active');
+    // Fix I-04: Update aria-expanded on button for screen readers
+    mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    mobileBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+});
+
+// Fix I-12: Close mobile nav when any nav link is clicked
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('nav-active');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileBtn.setAttribute('aria-label', 'Open navigation menu');
+    });
 });
 
 // WhatsApp Form Submission
@@ -61,8 +73,8 @@ if (waForm) {
         // Construct the WhatsApp URL
         const waUrl = `https://wa.me/${whatsappNumber}?text=${waMessage}`;
         
-        // Open WhatsApp in a new tab
-        window.open(`https://wa.me/${whatsappNumber}?text=${waMessage}`, '_blank');
+        // Fix I-08: Use the already-constructed waUrl variable
+        window.open(waUrl, '_blank');
         
         // Show success message and reset form
         const successMsg = document.getElementById('formSuccessMessage');
@@ -83,6 +95,10 @@ accordionHeaders.forEach(header => {
     header.addEventListener('click', function() {
         // Toggle active class on header
         this.classList.toggle('active');
+        
+        // Fix I-05: Update aria-expanded for screen reader state announcement
+        const expanded = this.classList.contains('active');
+        this.setAttribute('aria-expanded', expanded ? 'true' : 'false');
         
         // Get the content element
         const content = this.nextElementSibling;
@@ -149,7 +165,7 @@ if (marqueeContent) {
     }
 }
 
-// Read More Logic for Google Reviews
+// Fix I-06 & I-09: Update aria-expanded on Read more buttons when state changes
 const reviewTexts = document.querySelectorAll('.review-text-content');
 reviewTexts.forEach(text => {
     // If text is short, hide 'Read more' button
@@ -166,12 +182,30 @@ reviewTexts.forEach(text => {
             text.classList.toggle('expanded');
             if (text.classList.contains('expanded')) {
                 this.textContent = 'Read less';
+                this.setAttribute('aria-expanded', 'true');
             } else {
                 this.textContent = 'Read more';
+                this.setAttribute('aria-expanded', 'false');
             }
         });
     }
 });
+
+// Fix I-09: Highlight the current page's nav link
+(function markActiveNav() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-menu a:not(.btn-primary)');
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href').split('#')[0];
+        if (
+            linkPage === currentPage ||
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'index.html' && (linkPage === 'index.html' || linkPage === 'index.html#home'))
+        ) {
+            link.classList.add('nav-active-link');
+        }
+    });
+})();
 
 // Update Copyright Year
 const yearElement = document.getElementById('current-year');

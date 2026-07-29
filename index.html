@@ -31,6 +31,10 @@
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <!-- Fix I-17: Preconnect to CDN origins to reduce DNS/TLS latency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <script src="config.js"></script>
     <script src="maintenance.js"></script>
@@ -119,9 +123,10 @@
                     <li><a href="contact.html" class="btn-primary">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
+            <!-- Fix I-04: Use <button> not <div> for keyboard + screen reader accessibility -->
+            <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" type="button">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
@@ -137,6 +142,7 @@
             </div>
             <div class="hero-image">
                 <img src="hero_clinic.png" alt="Vedic Clinic Reception"
+                    fetchpriority="high"
                     style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--box-shadow); animation: float 6s ease-in-out infinite; object-fit: cover; max-height: 500px;">
             </div>
         </div>
@@ -173,7 +179,7 @@
         <div class="container about-container">
             <div class="about-content">
                 <h2>Helping Every Child Reach Their Potential</h2>
-                <p>At Vedic Child Development Centre, we help children grow, learn, communicate, and reach their full
+                <p>At Vedic Speech Therapy and Hearing Care Clinic, we help children grow, learn, communicate, and reach their full
                     potential. Our team offers Speech Therapy, Occupational Therapy, Behaviour Therapy, Oral Placement
                     Therapy, and other developmental services in a caring and supportive environment.</p>
                 <p>With over 18 years of professional experience, we provide personalized therapy programs to meet each
@@ -230,7 +236,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="current-year">2024</span> Vedic Speech Therapy and Hearing Care Clinic. All rights
+            <p>&copy; <span id="current-year">2026</span> Vedic Speech Therapy and Hearing Care Clinic. All rights
                 reserved.</p>
         </div>
     </footer>

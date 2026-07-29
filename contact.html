@@ -31,6 +31,10 @@
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <!-- Fix I-17: Preconnect to CDN origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <script src="config.js"></script>
     <script src="maintenance.js"></script>
@@ -108,9 +112,9 @@
                     <li><a href="contact.html" class="btn-primary">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" type="button">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
@@ -178,7 +182,7 @@
                                     <option value="+971">UAE (+971)</option>
                                     <option value="+65">SG (+65)</option>
                                 </select>
-                                <input type="tel" id="patientPhone" placeholder="10-digit Phone Number" required minlength="10" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
+                                <input type="tel" id="patientPhone" placeholder="10-digit Phone Number" required minlength="10" maxlength="15" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-main);">
                             </div>
                         </div>
                         <div class="form-group" style="margin-bottom: 15px;">
@@ -242,7 +246,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="current-year">2024</span> Vedic Speech Therapy and Hearing Care Clinic. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2026</span> Vedic Speech Therapy and Hearing Care Clinic. All rights reserved.</p>
         </div>
     </footer>
 
