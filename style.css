@@ -1,13 +1,13 @@
 /* Design System & Variables */
 :root {
-    /* Color Palette - White and Sky Blue mix */
-    --primary-color: #0288d1; /* Strong sky blue for main actions */
-    --primary-light: #e1f5fe; /* Very light sky blue for backgrounds */
-    --secondary-color: #03a9f4; /* Medium sky blue for highlights */
+    /* Color Palette - Teal and Orange mix */
+    --primary-color: #04A4AC; /* Teal for main actions */
+    --primary-light: #E6F6F7; /* Very light teal for backgrounds */
+    --secondary-color: #FA8902; /* Orange for highlights/accents */
     --text-dark: #333333; /* Dark text for readability */
     --text-light: #666666; /* Lighter text for secondary info */
     --white: #ffffff;
-    --background-color: #f9fbfc; /* Slightly blue-tinted off-white */
+    --background-color: #f9fbfc; /* Slightly tinted off-white */
     
     /* Typography */
     --font-main: 'Inter', sans-serif;
@@ -116,9 +116,11 @@ h1, h2, h3, h4 {
 }
 
 .logo img {
-    height: 50px; /* Reduced slightly to fit text nicely */
-    border-radius: 50%; /* the provided logo seems circular */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    height: auto;
+    max-height: 65px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
